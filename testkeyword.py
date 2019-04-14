@@ -80,7 +80,7 @@ top_df.columns=["Word", "Freq"]
 
 print (top_words)
 #Barplot of most freq words
-"""import seaborn as sns
+import seaborn as sns
 sns.set(rc={'figure.figsize':(13,8)})
 g = sns.barplot(x="Word", y="Freq", data=top_df)
-g.set_xticklabels(g.get_xticklabels(), rotation=30)"""
+g.set_xticklabels(g.get_xticklabels(), rotation=30)
