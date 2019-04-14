@@ -1,6 +1,5 @@
 # Store url
-#url = 'https://www.gutenberg.org/files/2701/2701-h/2701-h.htm'
-url = 'https://www.quantamixsolutions.com/solution'
+url = 'https://www.quantamixsolutions.com'
 """Import `requests`
 Make the request and check object type"""
 import numpy as np
