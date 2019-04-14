@@ -1,5 +1,5 @@
 # Store url
-url = 'https://www.quantamixsolutions.com'
+url = 'https://www.quantamixsolutions.com/blog/blogn/17'
 """Import `requests`
 Make the request and check object type"""
 import numpy as np
