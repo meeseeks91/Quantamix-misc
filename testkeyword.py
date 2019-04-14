@@ -76,6 +76,6 @@ top_df.columns=["Word", "Freq"]
 print (top_words)
 #Barplot of most freq words
 import seaborn
-seaborn.set(rc={'figure.figsize':(13,8)})
+seaborn.set(rc={'figure.figsize':(16,9)})
 g = seaborn.barplot(x="Word", y="Freq", data=top_df)
 g.set_xticklabels(g.get_xticklabels(), rotation=30)
