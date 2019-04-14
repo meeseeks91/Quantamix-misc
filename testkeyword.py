@@ -59,7 +59,7 @@ X=cv.fit_transform(corpus)
 
 
 #Most frequently occuring words
-def get_top_n_words(corpus, n=None):
+def get_top_words(corpus, n=None):
     vec = CountVectorizer().fit(corpus)
     bag_of_words = vec.transform(corpus)
     sum_words = bag_of_words.sum(axis=0)
@@ -69,13 +69,13 @@ def get_top_n_words(corpus, n=None):
                        reverse=True)
     return words_freq[:n]
 #Convert most freq words to dataframe for plotting bar plot
-top_words = get_top_n_words(corpus, n=20)
+top_words = get_top_words(corpus, n=20)
 top_df = pandas.DataFrame(top_words)
 top_df.columns=["Word", "Freq"]
 
 print (top_words)
 #Barplot of most freq words
-import seaborn as sns
-sns.set(rc={'figure.figsize':(13,8)})
-g = sns.barplot(x="Word", y="Freq", data=top_df)
+import seaborn
+seaborn.set(rc={'figure.figsize':(13,8)})
+g = seaborn.barplot(x="Word", y="Freq", data=top_df)
 g.set_xticklabels(g.get_xticklabels(), rotation=30)
