@@ -40,10 +40,9 @@ for word in words:
 
 #create nltk text
 text = nltk.Text(words_ns)
-#Creating a list of stop words
-stops= set(stopwords.words("english"))
 
 # remove punctuation, count no stop raw words
+stops= set(stopwords.words("english"))
 nonPunct = re.compile('.*[A-Za-z].*')
 raw_words = [w for w in text if nonPunct.match(w)]
 raw_word_count = Counter(raw_words)
@@ -51,15 +50,12 @@ raw_word_count = Counter(raw_words)
 corpus = [w for w in raw_words if w.lower() not in stops]
 corpus_count = Counter(corpus)
 
-#print (corpus_count)
+
 
 
 from sklearn.feature_extraction.text import CountVectorizer
 cv=CountVectorizer(max_df=0.8,stop_words=stops, max_features=10000, ngram_range=(1,3))
 X=cv.fit_transform(corpus)
-
-#print(list(cv.vocabulary_.keys())[:10])
-
 
 
 #Most frequently occuring words
